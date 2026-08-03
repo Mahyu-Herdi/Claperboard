@@ -182,14 +182,14 @@ export function Storyboard({ projectId }: { projectId: number }) {
 
             <div className="flex-1 flex flex-col justify-between space-y-6">
               {/* Page Top Header */}
-              <div className="border-b-2 border-zinc-950 pb-4 flex justify-between items-end">
+              <div className="border-b-4 border-black pb-4 flex justify-between items-end mb-6">
                 <div>
-                  <h1 className="font-mono font-black text-xl tracking-tighter text-zinc-950">ERBEA PRE - PRO</h1>
+                  <h1 className="font-sans font-black text-2xl tracking-tighter text-black uppercase">ERBEA PRE-PRO</h1>
                   <p className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest mt-0.5">DOKUMEN UTAMA KONSEP CERITA & STRUKTUR ALUR</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-xs font-black uppercase text-zinc-900">{project.title || 'Untitled Project'}</p>
-                  <p className="text-[9px] font-mono text-zinc-500 mt-0.5">DIRECTOR: {project.director || 'ERBEA'}</p>
+                  <p className="text-sm font-black uppercase text-black">{project.title || 'Untitled Project'}</p>
+                  <p className="text-[10px] font-bold text-black mt-1">DIR: {project.director || 'ERBEA'}</p>
                 </div>
               </div>
 
@@ -275,7 +275,7 @@ export function Storyboard({ projectId }: { projectId: number }) {
             </div>
 
             {/* Page Footer */}
-            <div className="border-t border-zinc-200 pt-3 mt-8 flex justify-between items-center text-[8px] text-zinc-400 font-mono tracking-wider uppercase">
+            <div className="border-t-2 border-black pt-3 mt-8 flex justify-between items-center text-[9px] text-black font-bold tracking-widest uppercase">
               <span>ERBEA PRE-PRO STUDIO SYSTEM</span>
               <span>HALAMAN 1 DARI {scenes.length + 1}</span>
             </div>
@@ -300,14 +300,14 @@ export function Storyboard({ projectId }: { projectId: number }) {
 
                 <div className="flex-1 flex flex-col justify-between space-y-6">
                   {/* Page Top Header */}
-                  <div className="border-b-2 border-zinc-950 pb-4 flex justify-between items-end">
+                  <div className="border-b-4 border-black pb-4 flex justify-between items-end mb-6">
                     <div>
-                      <h1 className="font-mono font-black text-xl tracking-tighter text-zinc-950">ERBEA PRE - PRO</h1>
+                      <h1 className="font-sans font-black text-2xl tracking-tighter text-black uppercase">ERBEA PRE-PRO</h1>
                       <p className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest mt-0.5">DOKUMEN SPESIFIKASI TEKNIS & STORYBOARD</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-xs font-black uppercase text-zinc-900">{project.title || 'Untitled Project'}</p>
-                      <p className="text-[9px] font-mono text-zinc-500 mt-0.5">DIRECTOR: {project.director || 'ERBEA'}</p>
+                      <p className="text-sm font-black uppercase text-black">{project.title || 'Untitled Project'}</p>
+                      <p className="text-[10px] font-bold text-black mt-1">DIR: {project.director || 'ERBEA'}</p>
                     </div>
                   </div>
 
@@ -487,7 +487,7 @@ export function Storyboard({ projectId }: { projectId: number }) {
                 </div>
 
                 {/* Page Footer */}
-                <div className="border-t border-zinc-200 pt-3 mt-8 flex justify-between items-center text-[8px] text-zinc-400 font-mono tracking-wider uppercase">
+                <div className="border-t-2 border-black pt-3 mt-8 flex justify-between items-center text-[9px] text-black font-bold tracking-widest uppercase">
                   <span>ERBEA PRE-PRO STUDIO SYSTEM</span>
                   <span>HALAMAN {sceneIdx + 2} DARI {scenes.length + 1}</span>
                 </div>

@@ -267,58 +267,58 @@ export function CallSheet({ projectId }: { projectId: number }) {
             <p className="text-[10px] opacity-75">Gunakan tombol "Cetak PDF Sekarang" atau tekan Ctrl+P untuk menyimpan sebagai PDF fisik.</p>
           </div>
 
-          <div className="w-full md:w-[210mm] bg-white text-zinc-950 shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-zinc-200 p-[10mm] md:p-[15mm] rounded-sm relative flex flex-col justify-between print:shadow-none print:border-none print:p-0 print:w-full print:bg-transparent">
+          <div className="w-full md:w-[210mm] bg-white text-black shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-gray-200 p-[10mm] md:p-[15mm] relative flex flex-col justify-between print:shadow-none print:border-none print:p-0 print:w-full print:bg-white">
             <div className="flex-1 flex flex-col space-y-6">
               {/* Page Top Header */}
-              <div className="border-b-2 border-zinc-950 pb-4 flex justify-between items-end">
+              <div className="border-b-4 border-black pb-4 flex justify-between items-end mb-6">
                 <div>
-                  <h1 className="font-mono font-black text-xl tracking-tighter text-zinc-950">ERBEA PRE - PRO</h1>
+                  <h1 className="font-sans font-black text-2xl tracking-tighter text-black uppercase">ERBEA PRE-PRO</h1>
                   <p className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest mt-0.5">JADWAL SYUTING RESMI (DAILY CALL SHEET)</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-xs font-black uppercase text-zinc-900">{project.title || 'Untitled Project'}</p>
-                  <p className="text-[9px] font-mono text-zinc-500 mt-0.5">HARI SYUTING: {project.shootingDay || 'HARI 1'}</p>
+                  <p className="text-sm font-black uppercase text-black">{project.title || 'Untitled Project'}</p>
+                  <p className="text-[10px] font-bold text-black mt-1">SHOOTING DAY: {project.shootingDay || 'HARI 1'}</p>
                 </div>
               </div>
 
               {/* Call Sheet Info Grid */}
-              <div className="grid grid-cols-2 gap-4 border-b border-zinc-300 pb-4">
+              <div className="grid grid-cols-2 gap-4 border-y-2 border-black py-4 bg-gray-50 mb-6">
                 <div className="space-y-1.5 text-[10px]">
                   <div>
-                    <span className="text-zinc-400 uppercase font-black tracking-wider text-[8px] block">Sutradara</span>
-                    <span className="font-bold text-zinc-900 text-xs uppercase">{project.director || 'N/A'}</span>
+                    <span className="text-gray-500 uppercase font-black tracking-widest text-[9px] block mb-0.5">Sutradara</span>
+                    <span className="font-black text-black text-xs uppercase">{project.director || 'N/A'}</span>
                   </div>
                   <div>
-                    <span className="text-zinc-400 uppercase font-black tracking-wider text-[8px] block">Produser</span>
-                    <span className="font-bold text-zinc-900 text-xs uppercase">{project.producer || 'N/A'}</span>
+                    <span className="text-gray-500 uppercase font-black tracking-widest text-[9px] block mb-0.5">Produser</span>
+                    <span className="font-black text-black text-xs uppercase">{project.producer || 'N/A'}</span>
                   </div>
                   <div>
-                    <span className="text-zinc-400 uppercase font-black tracking-wider text-[8px] block">Sinematografer</span>
-                    <span className="font-bold text-zinc-900 text-xs uppercase">{project.dp || 'N/A'}</span>
+                    <span className="text-gray-500 uppercase font-black tracking-widest text-[9px] block mb-0.5">Sinematografer</span>
+                    <span className="font-black text-black text-xs uppercase">{project.dp || 'N/A'}</span>
                   </div>
                 </div>
                 <div className="space-y-1.5 text-[10px] text-right">
                   <div>
-                    <span className="text-zinc-400 uppercase font-black tracking-wider text-[8px] block">Tanggal Syuting</span>
-                    <span className="font-bold text-zinc-900 text-xs">{project.date || 'TBA'}</span>
+                    <span className="text-gray-500 uppercase font-black tracking-widest text-[9px] block mb-0.5">Tanggal Syuting</span>
+                    <span className="font-black text-black text-xs">{project.date || 'TBA'}</span>
                   </div>
                   <div>
-                    <span className="text-zinc-400 uppercase font-black tracking-wider text-[8px] block">Call Time</span>
-                    <span className="font-black text-amber-600 text-base">{project.callTime || 'TBA'}</span>
+                    <span className="text-gray-500 uppercase font-black tracking-widest text-[9px] block mb-0.5">Call Time</span>
+                    <span className="font-black text-black text-base underline decoration-2">{project.callTime || 'TBA'}</span>
                   </div>
                   <div>
-                    <span className="text-zinc-400 uppercase font-black tracking-wider text-[8px] block">Lokasi Utama</span>
-                    <span className="font-bold text-zinc-900 text-xs">{project.location || 'TBA'}</span>
+                    <span className="text-gray-500 uppercase font-black tracking-widest text-[9px] block mb-0.5">Lokasi Utama</span>
+                    <span className="font-black text-black text-xs">{project.location || 'TBA'}</span>
                   </div>
                 </div>
               </div>
 
               {/* Rundown Table */}
               <div>
-                <span className="text-zinc-500 font-extrabold uppercase text-[7.5px] block tracking-wider mb-2">Jadwal Adegan (Rundown)</span>
-                <table className="w-full text-left border-collapse text-[9px] font-mono">
+                <h3 className="text-[11px] font-black uppercase text-black tracking-widest mb-2">JADWAL ADEGAN (RUNDOWN)</h3>
+                <table className="w-full text-left border-collapse text-[10px] font-mono border-2 border-black">
                   <thead>
-                    <tr className="border-b-2 border-zinc-950 text-zinc-500 bg-zinc-50">
+                    <tr className="bg-black text-white uppercase tracking-widest">
                       <th className="p-2 uppercase font-black">Adegan</th>
                       <th className="p-2 uppercase font-black">Latar</th>
                       <th className="p-2 uppercase font-black">Waktu</th>
@@ -367,7 +367,7 @@ export function CallSheet({ projectId }: { projectId: number }) {
             </div>
 
             {/* Page Footer */}
-            <div className="border-t border-zinc-200 pt-3 mt-8 flex justify-between items-center text-[8px] text-zinc-400 font-mono tracking-wider uppercase">
+            <div className="border-t-2 border-black pt-3 mt-8 flex justify-between items-center text-[9px] text-black font-bold tracking-widest uppercase">
               <span>ERBEA PRE-PRO STUDIO SYSTEM</span>
               <span>DAILY CALL SHEET OFFICIAL DRAFT</span>
             </div>

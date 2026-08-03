@@ -346,14 +346,14 @@ export function ScriptBreakdown({ projectId }: { projectId: number }) {
           >
             <div className="flex-1 flex flex-col justify-between space-y-6">
               {/* Page Top Header */}
-              <div className="border-b-2 border-zinc-950 pb-4 flex justify-between items-end">
+              <div className="border-b-4 border-black pb-4 flex justify-between items-end">
                 <div>
-                  <h1 className="font-mono font-black text-xl tracking-tighter text-zinc-950">ERBEA PRE - PRO</h1>
+                  <h1 className="font-sans font-black text-2xl tracking-tighter text-black uppercase">ERBEA PRE-PRO</h1>
                   <p className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest mt-0.5">DOKUMEN UTAMA KONSEP CERITA & STRUKTUR ALUR</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-xs font-black uppercase text-zinc-900">{project.title || 'Untitled Project'}</p>
-                  <p className="text-[9px] font-mono text-zinc-500 mt-0.5">DIRECTOR: {project.director || 'ERBEA'}</p>
+                  <p className="text-sm font-black uppercase text-black">{project.title || 'Untitled Project'}</p>
+                  <p className="text-[10px] font-bold text-black mt-1">DIR: {project.director || 'ERBEA'}</p>
                 </div>
               </div>
 
@@ -366,9 +366,9 @@ export function ScriptBreakdown({ projectId }: { projectId: number }) {
               {/* Core Concept Grid */}
               <div className="grid grid-cols-2 gap-6 my-4">
                 <div className="space-y-4">
-                  <div className="p-4 bg-zinc-50 border border-zinc-200 rounded">
+                  <div className="p-4 border-l-4 border-black bg-gray-50">
                     <h3 className="text-[10px] text-amber-800 font-extrabold uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-amber-500"></span>
+                      
                       Premis & Logline Cerita
                     </h3>
                     <p className="font-mono text-xs text-zinc-800 leading-relaxed font-semibold">
@@ -376,9 +376,9 @@ export function ScriptBreakdown({ projectId }: { projectId: number }) {
                     </p>
                   </div>
 
-                  <div className="p-4 bg-zinc-50 border border-zinc-200 rounded">
-                    <h3 className="text-[10px] text-zinc-700 font-extrabold uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-zinc-400"></span>
+                  <div className="p-4 border-l-4 border-black bg-gray-50">
+                    <h3 className="text-[10px] text-black font-black uppercase tracking-widest mb-2 flex items-center gap-1.5">
+                      
                       Karakter Utama & Karakterisasi
                     </h3>
                     <p className="font-mono text-xs text-zinc-800 leading-relaxed">
@@ -388,9 +388,9 @@ export function ScriptBreakdown({ projectId }: { projectId: number }) {
                 </div>
 
                 <div className="space-y-4">
-                  <div className="p-4 bg-zinc-50 border border-zinc-200 rounded">
-                    <h3 className="text-[10px] text-zinc-700 font-extrabold uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-zinc-400"></span>
+                  <div className="p-4 border-l-4 border-black bg-gray-50">
+                    <h3 className="text-[10px] text-black font-black uppercase tracking-widest mb-2 flex items-center gap-1.5">
+                      
                       Konflik / Rintangan Utama
                     </h3>
                     <p className="font-mono text-xs text-zinc-800 leading-relaxed">
@@ -398,9 +398,9 @@ export function ScriptBreakdown({ projectId }: { projectId: number }) {
                     </p>
                   </div>
 
-                  <div className="p-4 bg-zinc-50 border border-zinc-200 rounded">
-                    <h3 className="text-[10px] text-amber-900 font-extrabold uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-amber-500"></span>
+                  <div className="p-4 border-l-4 border-black bg-gray-50">
+                    <h3 className="text-[10px] text-black font-black uppercase tracking-widest mb-2 flex items-center gap-1.5">
+                      
                       Pesan Emosional / Inti Cerita
                     </h3>
                     <p className="font-mono text-xs text-zinc-800 leading-relaxed italic">
@@ -411,16 +411,16 @@ export function ScriptBreakdown({ projectId }: { projectId: number }) {
               </div>
 
               {/* Synopsis Section */}
-              <div className="p-4 bg-zinc-50 border border-zinc-200 rounded">
-                <h3 className="text-[10px] text-zinc-700 font-extrabold uppercase tracking-wider mb-2">SINOPSIS SINGKAT</h3>
+              <div className="p-4 border-l-4 border-black bg-gray-50">
+                <h3 className="text-[10px] text-black font-black uppercase tracking-widest mb-2 border-b border-black/20 pb-2">SINOPSIS SINGKAT</h3>
                 <p className="font-mono text-xs text-zinc-800 leading-relaxed whitespace-pre-wrap">
                   {project.synopsis || 'Belum diisi sinopsis singkat.'}
                 </p>
               </div>
 
               {/* Three Act Outline */}
-              <div className="p-4 border border-zinc-200 rounded space-y-3 bg-zinc-50/50">
-                <h3 className="text-[10px] text-zinc-800 font-extrabold uppercase tracking-wider border-b border-zinc-200 pb-1.5">OUTLINE STRUKTUR 3 BABAK</h3>
+              <div className="p-4 border-2 border-black space-y-3 bg-white mt-4">
+                <h3 className="text-[11px] text-black font-black uppercase tracking-widest border-b-2 border-black pb-2">OUTLINE STRUKTUR 3 BABAK</h3>
                 <div className="grid grid-cols-3 gap-4 text-xs font-mono">
                   <div>
                     <h4 className="font-extrabold text-[9px] text-amber-700 uppercase mb-1">Babak 1 (Awal / Intro)</h4>
@@ -439,7 +439,7 @@ export function ScriptBreakdown({ projectId }: { projectId: number }) {
             </div>
 
             {/* Page Footer */}
-            <div className="border-t border-zinc-200 pt-3 mt-8 flex justify-between items-center text-[8px] text-zinc-400 font-mono tracking-wider uppercase">
+            <div className="border-t-2 border-black pt-3 mt-8 flex justify-between items-center text-[9px] text-black font-bold tracking-widest uppercase">
               <span>ERBEA PRE-PRO STUDIO SYSTEM</span>
               <span>HALAMAN 1 DARI {scenes.length + 1}</span>
             </div>
@@ -455,37 +455,37 @@ export function ScriptBreakdown({ projectId }: { projectId: number }) {
               >
                 <div className="flex-1 flex flex-col justify-between space-y-6">
                   {/* Page Top Header */}
-                  <div className="border-b-2 border-zinc-950 pb-4 flex justify-between items-end">
+                  <div className="border-b-4 border-black pb-4 flex justify-between items-end">
                     <div>
-                      <h1 className="font-mono font-black text-xl tracking-tighter text-zinc-950">ERBEA PRE - PRO</h1>
-                      <p className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest mt-0.5">DOKUMEN BEDAH SKENARIO & PAPAN CERITA</p>
+                      <h1 className="font-sans font-black text-2xl tracking-tighter text-black uppercase">ERBEA PRE-PRO</h1>
+                      <p className="text-[10px] font-bold text-black uppercase tracking-widest mt-1">SCRIPT BREAKDOWN & STORYBOARD</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-xs font-black uppercase text-zinc-900">{project.title || 'Untitled Project'}</p>
-                      <p className="text-[9px] font-mono text-zinc-500 mt-0.5">DIRECTOR: {project.director || 'ERBEA'}</p>
+                      <p className="text-sm font-black uppercase text-black">{project.title || 'Untitled Project'}</p>
+                      <p className="text-[10px] font-bold text-black mt-1">DIR: {project.director || 'ERBEA'}</p>
                     </div>
                   </div>
 
                   {/* Scene Banner Header */}
-                  <div className="bg-zinc-100 p-4 rounded border-l-4 border-amber-500 flex justify-between items-center">
+                  <div className="bg-black p-3 text-white flex justify-between items-center">
                     <div className="flex items-center gap-3">
-                      <span className="font-mono font-black text-sm bg-zinc-950 text-white px-2.5 py-1 rounded">
+                      <span className="font-mono font-black text-sm bg-white text-black px-2.5 py-1">
                         ADEGAN {scene.sceneNumber}
                       </span>
                       <div>
-                        <h2 className="font-black text-xs uppercase tracking-wide text-zinc-900">
+                        <h2 className="font-black text-xs uppercase tracking-wide text-white">
                           {scene.locationType} - {scene.time}
                         </h2>
                       </div>
                     </div>
-                    <div className="text-right text-[10px] text-zinc-600 font-mono">
-                      Shot: <span className="font-bold text-zinc-950">{sceneShots.length}</span>
+                    <div className="text-right text-[10px] text-gray-300 font-mono">
+                      Shot: <span className="font-bold text-white">{sceneShots.length}</span>
                     </div>
                   </div>
 
                   {/* Scene Script Block */}
                   {printMode !== 'storyboard-only' && scene.actionText && (
-                    <div className="p-4 bg-zinc-50 border border-zinc-200 rounded font-mono text-xs text-zinc-800 whitespace-pre-wrap leading-relaxed">
+                    <div className="p-4 font-serif text-sm text-black whitespace-pre-wrap leading-relaxed border-l-2 border-gray-300 pl-4 my-4">
                       {scene.actionText}
                     </div>
                   )}
@@ -493,21 +493,21 @@ export function ScriptBreakdown({ projectId }: { projectId: number }) {
                   {/* Storyboard Block */}
                   {printMode !== 'script-only' && sceneShots.length > 0 && (
                     <div className="space-y-4">
-                      <h3 className="text-[10px] text-zinc-500 font-extrabold uppercase tracking-wider border-b border-zinc-200 pb-1.5">Storyboard & Shot List Adegan {scene.sceneNumber}</h3>
+                      <h3 className="text-[11px] text-black font-black uppercase tracking-widest border-b-2 border-black pb-1.5 mt-4">Storyboard & Shot List Adegan {scene.sceneNumber}</h3>
                       <div className="grid grid-cols-2 gap-4">
                         {sceneShots.map((shot, idx) => {
                           const shotIdentifier = scene.sceneNumber + String.fromCharCode(65 + idx);
                           return (
                             <div key={shot.id} className="border border-zinc-200 rounded p-2.5 bg-zinc-50/50 print-break-inside-avoid">
                               <div className="flex justify-between items-center mb-1.5">
-                                <span className="font-mono font-black text-[10px] bg-zinc-900 text-white px-2 py-0.5 rounded">
+                                <span className="font-mono font-black text-[10px] bg-black text-white px-2 py-0.5">
                                   SHOT {shotIdentifier}
                                 </span>
-                                <span className="text-[8px] font-extrabold uppercase bg-amber-100 text-amber-950 px-1.5 py-0.5 rounded">
+                                <span className="text-[8px] font-black uppercase border border-black text-black px-1.5 py-0.5">
                                   {shot.shotType || 'MCU'} • {shot.cameraAngle || 'Eye Level'}
                                 </span>
                               </div>
-                              <div className="aspect-video bg-zinc-100 border border-zinc-200 rounded overflow-hidden flex items-center justify-center relative mb-2">
+                              <div className="aspect-video bg-gray-100 border border-black overflow-hidden flex items-center justify-center relative mb-3">
                                 {shot.imageBlob ? (
                                   <StoryboardFrame buffer={shot.imageBlob} />
                                 ) : (
@@ -533,7 +533,7 @@ export function ScriptBreakdown({ projectId }: { projectId: number }) {
                 </div>
 
                 {/* Page Footer */}
-                <div className="border-t border-zinc-200 pt-3 mt-8 flex justify-between items-center text-[8px] text-zinc-400 font-mono tracking-wider uppercase">
+                <div className="border-t-2 border-black pt-3 mt-8 flex justify-between items-center text-[9px] text-black font-bold tracking-widest uppercase">
                   <span>ERBEA PRE-PRO STUDIO SYSTEM</span>
                   <span>HALAMAN {sceneIdx + 2} DARI {scenes.length + 1}</span>
                 </div>

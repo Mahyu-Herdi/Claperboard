@@ -95,33 +95,33 @@ export function ShotList({ projectId }: { projectId: number }) {
             <p className="text-[10px] opacity-75">Gunakan tombol "Cetak PDF Sekarang" atau tekan Ctrl+P untuk menyimpan sebagai PDF fisik.</p>
           </div>
 
-          <div className="w-full md:w-[210mm] bg-white text-zinc-950 shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-zinc-200 p-[10mm] md:p-[15mm] rounded-sm relative flex flex-col justify-between print:shadow-none print:border-none print:p-0 print:w-full print:bg-transparent">
+          <div className="w-full md:w-[210mm] bg-white text-black shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-gray-200 p-[10mm] md:p-[15mm] relative flex flex-col justify-between print:shadow-none print:border-none print:p-0 print:w-full print:bg-white">
             <div className="flex-1 flex flex-col space-y-6">
               {/* Page Top Header */}
-              <div className="border-b-2 border-zinc-950 pb-4 flex justify-between items-end">
+              <div className="border-b-4 border-black pb-4 flex justify-between items-end mb-6">
                 <div>
-                  <h1 className="font-mono font-black text-xl tracking-tighter text-zinc-950">ERBEA PRE - PRO</h1>
-                  <p className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest mt-0.5">DOKUMEN RESMI DAFTAR SHOT (SHOT LIST)</p>
+                  <h1 className="font-sans font-black text-2xl tracking-tighter text-black uppercase">ERBEA PRE-PRO</h1>
+                  <p className="text-[10px] font-bold text-black uppercase tracking-widest mt-1">PRODUCTION SHOT LIST</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-xs font-black uppercase text-zinc-900">{project.title || 'Untitled Project'}</p>
-                  <p className="text-[9px] font-mono text-zinc-500 mt-0.5">DIRECTOR: {project.director || 'ERBEA'}</p>
+                  <p className="text-sm font-black uppercase text-black">{project.title || 'Untitled Project'}</p>
+                  <p className="text-[10px] font-bold text-black mt-1">DIR: {project.director || 'ERBEA'}</p>
                 </div>
               </div>
 
               {/* Shot List Table */}
-              <div className="border border-zinc-950 rounded overflow-hidden">
+              <div className="border-2 border-black overflow-hidden">
                 <table className="w-full text-left border-collapse text-[10.5px]">
                   <thead>
-                    <tr className="bg-zinc-100 text-zinc-900 border-b-2 border-zinc-950 font-black uppercase text-[8.5px] tracking-wider">
-                      <th className="p-2.5 border-r border-zinc-200 w-10 text-center">✓</th>
-                      <th className="p-2.5 border-r border-zinc-200 w-16 text-center">Shot #</th>
-                      <th className="p-2.5 border-r border-zinc-200 w-24">Adegan & Latar</th>
-                      <th className="p-2.5 border-r border-zinc-200">Spesifikasi Kamera & Komposisi</th>
+                    <tr className="bg-black text-white font-black uppercase text-[9px] tracking-widest">
+                      <th className="p-2.5 border-r border-gray-300 w-10 text-center">✓</th>
+                      <th className="p-2.5 border-r border-gray-300 w-16 text-center">Shot #</th>
+                      <th className="p-2.5 border-r border-gray-300 w-24">Adegan & Latar</th>
+                      <th className="p-2.5 border-r border-gray-300">Spesifikasi Kamera & Komposisi</th>
                       <th className="p-2.5">Catatan Teknis</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-zinc-200 font-medium">
+                  <tbody className="divide-y divide-gray-300 font-medium">
                     {scenes.map(scene => {
                       const sceneShots = shots.filter(s => s.sceneId === scene.id);
                       if (sceneShots.length === 0) return null;
@@ -129,8 +129,8 @@ export function ShotList({ projectId }: { projectId: number }) {
                       return (
                         <React.Fragment key={scene.id}>
                           {/* Scene Row Divider */}
-                          <tr className="bg-zinc-50 border-y border-zinc-350 print-break-inside-avoid">
-                            <td colSpan={5} className="p-2 font-mono font-black text-[9.5px] text-zinc-900 uppercase">
+                          <tr className="bg-gray-200 border-y-2 border-black print-break-inside-avoid">
+                            <td colSpan={5} className="p-2 font-sans font-black text-[10px] text-black uppercase tracking-widest">
                               ADEGAN {scene.sceneNumber} • {scene.locationType} • {scene.time}
                             </td>
                           </tr>
@@ -139,29 +139,29 @@ export function ShotList({ projectId }: { projectId: number }) {
                             const shotIdentifier = scene.sceneNumber + String.fromCharCode(65 + idx);
                             return (
                               <tr key={shot.id} className="align-top border-b border-zinc-150 print-break-inside-avoid">
-                                <td className="p-2.5 font-mono font-black text-center border-r border-zinc-200 text-xs">
-                                  <div className="w-4 h-4 border-2 border-zinc-400 rounded-sm mx-auto flex items-center justify-center">
-                                    {shot.taken && <div className="w-2 h-2 bg-zinc-800 rounded-sm" />}
+                                <td className="p-2.5 font-mono font-black text-center border-r border-gray-300 text-xs">
+                                  <div className="w-4 h-4 border-2 border-black mx-auto flex items-center justify-center">
+                                    {shot.taken && <div className="w-2 h-2 bg-black" />}
                                   </div>
                                 </td>
-                                <td className="p-2.5 font-mono font-black text-center border-r border-zinc-200 text-xs bg-zinc-50/50">
+                                <td className="p-2.5 font-mono font-black text-center border-r border-gray-300 text-xs bg-gray-50">
                                   {shotIdentifier}
                                 </td>
-                                <td className="p-2.5 border-r border-zinc-200 text-zinc-700 leading-normal">
-                                  <div className="font-bold text-zinc-900">Scene {scene.sceneNumber}</div>
-                                  <div className="text-[8.5px] text-zinc-500 uppercase font-bold mt-0.5">{scene.locationType} • {scene.time}</div>
+                                <td className="p-2.5 border-r border-gray-300 text-zinc-700 leading-normal">
+                                  <div className="font-black text-black">Scene {scene.sceneNumber}</div>
+                                  <div className="text-[9px] text-gray-600 uppercase font-bold mt-1">{scene.locationType} • {scene.time}</div>
                                 </td>
-                                <td className="p-2.5 border-r border-zinc-200 space-y-1">
-                                  <div className="font-black text-zinc-950">{shotTypeNames[shot.shotType] || shot.shotType || '-'}</div>
-                                  <div className="text-[9px] text-zinc-600 font-semibold">
+                                <td className="p-2.5 border-r border-gray-300 space-y-1">
+                                  <div className="font-black text-black">{shotTypeNames[shot.shotType] || shot.shotType || '-'}</div>
+                                  <div className="text-[9px] text-gray-700 font-bold">
                                     {angleNames[shot.cameraAngle] || shot.cameraAngle || 'Eye Level'} • {movementNames[shot.movement] || shot.movement || 'Statis'}
                                   </div>
-                                  <div className="text-[8.5px] text-zinc-500 font-mono">
+                                  <div className="text-[9px] text-gray-600 font-mono mt-1 border-t border-gray-200 pt-1">
                                     Lensa: {shot.focalLength || 'N/A'} | Alat: {shot.rig || 'Tripod'} | FPS: {shot.frameRate || '24fps'}
                                   </div>
                                 </td>
-                                <td className="p-2.5 text-zinc-800 text-[9.5px] whitespace-pre-wrap italic">
-                                  {shot.lightingNotes || <span className="text-zinc-400 font-normal">Tidak ada catatan teknis khusus.</span>}
+                                <td className="p-2.5 text-black text-[10px] whitespace-pre-wrap leading-relaxed">
+                                  {shot.lightingNotes || <span className="text-gray-400 italic">Tidak ada catatan teknis khusus.</span>}
                                 </td>
                               </tr>
                             );
@@ -181,7 +181,7 @@ export function ShotList({ projectId }: { projectId: number }) {
             </div>
 
             {/* Page Footer */}
-            <div className="border-t border-zinc-200 pt-3 mt-8 flex justify-between items-center text-[8px] text-zinc-400 font-mono tracking-wider uppercase">
+            <div className="border-t-2 border-black pt-3 mt-8 flex justify-between items-center text-[9px] text-black font-bold tracking-widest uppercase">
               <span>ERBEA PRE-PRO STUDIO SYSTEM</span>
               <span>STANDAR LIST PRE-PRODUKSI</span>
             </div>
