@@ -1,0 +1,437 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --clay-bg: #CECECE;
+  --clay-surface: #E3E3E3;
+  --clay-dark: #16161a;
+  --clay-border: #b8b8b8;
+  --clay-shadow-dark: #a2a2a2;
+  --clay-shadow-light: #ffffff;
+
+  --clay-card-highlight: rgba(255, 255, 255, 0.35);
+  --clay-card-shadow: rgba(0, 0, 0, 0.1);
+  --clay-card-border: rgba(255, 255, 255, 0.5);
+
+  --clay-inset-bg: #C2C2C2;
+  --clay-inset-shadow-dark: rgba(0, 0, 0, 0.08);
+  --clay-inset-shadow-light: rgba(255, 255, 255, 0.45);
+  --clay-inset-border: rgba(0, 0, 0, 0.03);
+
+  --clay-btn-highlight: rgba(255, 255, 255, 0.45);
+  --clay-btn-shadow: rgba(0, 0, 0, 0.05);
+  --clay-btn-border: rgba(255, 255, 255, 0.4);
+
+  --clay-input-highlight: rgba(255, 255, 255, 0.7);
+  --clay-input-shadow: rgba(0, 0, 0, 0.04);
+  --clay-input-border: rgba(255, 255, 255, 0.2);
+}
+
+.dark {
+  --clay-bg: #121214;
+  --clay-surface: #1e1e24;
+  --clay-dark: #f3f3f5;
+  --clay-border: #2c2c34;
+  --clay-shadow-dark: #09090b;
+  --clay-shadow-light: #2a2a32;
+
+  --clay-card-highlight: rgba(255, 255, 255, 0.06);
+  --clay-card-shadow: rgba(0, 0, 0, 0.4);
+  --clay-card-border: rgba(255, 255, 255, 0.03);
+
+  --clay-inset-bg: #141417;
+  --clay-inset-shadow-dark: rgba(0, 0, 0, 0.4);
+  --clay-inset-shadow-light: rgba(255, 255, 255, 0.04);
+  --clay-inset-border: rgba(255, 255, 255, 0.01);
+
+  --clay-btn-highlight: rgba(255, 255, 255, 0.08);
+  --clay-btn-shadow: rgba(0, 0, 0, 0.35);
+  --clay-btn-border: rgba(255, 255, 255, 0.05);
+
+  --clay-input-highlight: rgba(255, 255, 255, 0.04);
+  --clay-input-shadow: rgba(0, 0, 0, 0.4);
+  --clay-input-border: rgba(255, 255, 255, 0.02);
+}
+
+@theme {
+  --color-clay-bg: var(--clay-bg);
+  --color-clay-surface: var(--clay-surface);
+  --color-clay-dark: var(--clay-dark);
+  --color-clay-border: var(--clay-border);
+  --color-clay-shadow-dark: var(--clay-shadow-dark);
+  --color-clay-shadow-light: var(--clay-shadow-light);
+}
+
+@layer utilities {
+  .clay-card {
+    background: var(--color-clay-surface);
+    border-radius: 20px;
+    box-shadow: 
+      inset 2px 2px 5px var(--clay-card-highlight),
+      inset -3px -3px 5px var(--clay-card-shadow);
+    transition: all 0.2s ease-in-out;
+    border: 1px solid var(--clay-card-border);
+  }
+  
+  .clay-card-dark {
+    background: var(--color-clay-dark);
+    border-radius: 20px;
+    box-shadow: 
+      inset 2px 2px 5px rgba(255, 255, 255, 0.06),
+      inset -3px -3px 5px rgba(0, 0, 0, 0.35);
+    transition: all 0.2s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+  }
+
+  .clay-inset {
+    background: var(--clay-inset-bg);
+    border-radius: 16px;
+    box-shadow: 
+      inset 4px 4px 8px var(--clay-inset-shadow-dark), 
+      inset -4px -4px 8px var(--clay-inset-shadow-light);
+    border: 1px solid var(--clay-inset-border);
+  }
+
+  .clay-btn {
+    background: var(--color-clay-surface);
+    border-radius: 12px;
+    box-shadow: 
+      4px 4px 8px var(--color-clay-shadow-dark), 
+      -4px -4px 8px var(--color-clay-shadow-light),
+      inset 2px 2px 4px var(--clay-btn-highlight),
+      inset -2px -2px 4px var(--clay-btn-shadow);
+    transition: all 0.2s ease-in-out;
+    border: 1px solid var(--clay-btn-border);
+  }
+  
+  .clay-btn:active {
+    transform: scale(0.97);
+    box-shadow: 
+      inset 3px 3px 6px var(--color-clay-shadow-dark), 
+      inset -3px -3px 6px var(--color-clay-shadow-light);
+  }
+
+  .clay-btn-dark {
+    background: var(--color-clay-dark);
+    color: var(--color-clay-surface);
+    border-radius: 12px;
+    box-shadow: 
+      4px 4px 8px rgba(0, 0, 0, 0.35), 
+      -4px -4px 8px rgba(255, 255, 255, 0.01),
+      inset 2px 2px 4px rgba(255, 255, 255, 0.05),
+      inset -2px -2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+  }
+  
+  .clay-btn-dark:active {
+    transform: scale(0.97);
+    box-shadow: 
+      inset 3px 3px 6px rgba(0, 0, 0, 0.45), 
+      inset -3px -3px 6px rgba(255, 255, 255, 0.01);
+  }
+
+  .clay-input {
+    background: var(--color-clay-surface);
+    border-radius: 14px;
+    box-shadow: 
+      inset 3px 3px 6px var(--clay-input-shadow), 
+      inset -3px -3px 6px var(--clay-input-highlight);
+    outline: none;
+    border: 1px solid var(--clay-input-border);
+    padding: 0.75rem 1rem;
+    color: var(--color-clay-dark);
+    transition: all 0.15s ease;
+  }
+
+  .clay-input:focus {
+    border-color: #f59e0b; /* amber-500 */
+    box-shadow: 
+      inset 3px 3px 6px var(--clay-input-shadow), 
+      inset -3px -3px 6px var(--clay-input-highlight),
+      0 0 0 2px rgba(245, 158, 11, 0.2);
+  }
+
+  .popup-card {
+    background: var(--color-clay-surface);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 
+      12px 24px 48px rgba(0, 0, 0, 0.12),
+      inset 4px 4px 8px rgba(255, 255, 255, 0.8), 
+      inset -4px -4px 10px rgba(0, 0, 0, 0.04);
+  }
+
+  .popup-input, .popup-select {
+    background: var(--color-clay-surface);
+    border-radius: 14px;
+    box-shadow: 
+      inset 3px 3px 6px var(--clay-input-shadow), 
+      inset -3px -3px 6px var(--clay-input-highlight);
+    outline: none;
+    border: 1px solid var(--clay-input-border);
+    padding: 0.75rem 1rem;
+    color: var(--color-clay-dark);
+    font-weight: bold;
+    transition: all 0.15s ease;
+  }
+
+  .popup-input:focus, .popup-select:focus {
+    box-shadow: 
+      inset 4px 4px 8px rgba(0, 0, 0, 0.06), 
+      inset -4px -4px 8px rgba(255, 255, 255, 0.8);
+    border-color: rgba(0, 0, 0, 0.15);
+  }
+  
+  .clay-header-stripes {
+    background: repeating-linear-gradient(
+      45deg,
+      #1a1a1a,
+      #1a1a1a 30px,
+      #ffffff 30px,
+      #ffffff 60px
+    );
+  }
+
+  .text-micro {
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+}
+
+body {
+  background-color: var(--color-clay-bg);
+  color: var(--color-clay-dark);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode generic overrides */
+.dark {
+  color-scheme: dark;
+}
+
+/* Elements with high-visibility bright backgrounds must keep their dark text/icons in dark mode */
+.dark .bg-amber-500,
+.dark .bg-amber-400,
+.dark .bg-amber-300,
+.dark .bg-yellow-500,
+.dark .bg-yellow-400,
+.dark .bg-green-500,
+.dark .keep-dark {
+  color: #111111 !important;
+}
+
+.dark .bg-amber-500 *,
+.dark .bg-amber-400 *,
+.dark .bg-amber-300 *,
+.dark .bg-yellow-500 *,
+.dark .bg-yellow-400 *,
+.dark .bg-green-500 *,
+.dark .keep-dark * {
+  color: #111111 !important;
+}
+
+.dark .text-black,
+.dark text-black {
+  color: #f3f3f5 !important;
+}
+
+.dark .text-zinc-950,
+.dark text-zinc-950 {
+  color: #fafafa !important;
+}
+
+.dark .text-black\/95 {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.dark .text-black\/90 {
+  color: rgba(255, 255, 255, 0.90) !important;
+}
+
+.dark .text-black\/85 {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.dark .text-black\/80 {
+  color: rgba(255, 255, 255, 0.80) !important;
+}
+
+.dark .text-black\/75 {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.dark .text-black\/70 {
+  color: rgba(255, 255, 255, 0.70) !important;
+}
+
+.dark .text-black\/65 {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+.dark .text-black\/60 {
+  color: rgba(255, 255, 255, 0.60) !important;
+}
+
+.dark .text-black\/50 {
+  color: rgba(255, 255, 255, 0.50) !important;
+}
+
+.dark .text-black\/40 {
+  color: rgba(255, 255, 255, 0.40) !important;
+}
+
+.dark .text-black\/30 {
+  color: rgba(255, 255, 255, 0.30) !important;
+}
+
+.dark .text-black\/25 {
+  color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.dark .text-black\/20 {
+  color: rgba(255, 255, 255, 0.20) !important;
+}
+
+.dark .text-black\/15 {
+  color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.dark .text-black\/10 {
+  color: rgba(255, 255, 255, 0.10) !important;
+}
+
+.dark .text-black\/5 {
+  color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark .text-zinc-900,
+.dark text-zinc-900 {
+  color: #f3f3f5 !important;
+}
+
+.dark .text-zinc-800,
+.dark text-zinc-800 {
+  color: #e4e4e7 !important;
+}
+
+.dark .text-zinc-700,
+.dark text-zinc-700 {
+  color: #d4d4d8 !important;
+}
+
+.dark .text-zinc-600,
+.dark text-zinc-600 {
+  color: #cbd5e1 !important;
+}
+
+.dark .text-zinc-500,
+.dark text-zinc-500 {
+  color: #a1a1aa !important;
+}
+
+.dark .text-zinc-400,
+.dark text-zinc-400 {
+  color: #cbd5e1 !important;
+}
+
+.dark .bg-white {
+  background-color: var(--color-clay-surface) !important;
+}
+
+.dark .bg-zinc-50 {
+  background-color: var(--clay-inset-bg) !important;
+}
+
+.dark .bg-zinc-100 {
+  background-color: var(--clay-inset-bg) !important;
+}
+
+.dark .border-black/10,
+.dark .border-black\/10 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark .border-black/5,
+.dark .border-black\/5 {
+  border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark .border-zinc-200,
+.dark .border-zinc-300 {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark .bg-black/5,
+.dark .bg-black\/5 {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark .bg-black/10,
+.dark .bg-black\/10 {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark .bg-black/20,
+.dark .bg-black\/20 {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.dark .bg-black/[0.02] {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+.dark .bg-[#E0E0E0]/95 {
+  background-color: rgba(30, 30, 36, 0.95) !important;
+}
+
+.dark .border-white/50 {
+  border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark .clay-header-stripes {
+  background: repeating-linear-gradient(
+    45deg,
+    #111111,
+    #111111 30px,
+    #ffffff 30px,
+    #ffffff 60px
+  ) !important;
+}
+
+.dark .shadow-\[0_12px_32px_rgba\(0\2c 0\2c 0\2c 0\.12\)\2c _inset_2px_2px_4px_rgba\(255\2c 255\2c 255\2c 0\.7\)\2c _inset_-2px_-2px_4px_rgba\(0\2c 0\2c 0\2c 0\.05\)\] {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), inset 2px 2px 4px rgba(255, 255, 255, 0.04), inset -2px -2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+@media print {
+  html, body, #root, div[class*="h-screen"], main, .overflow-hidden, .overflow-y-auto {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    position: static !important;
+  }
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .clay-card, .clay-btn {
+    box-shadow: none !important;
+    border: 1px solid #000 !important;
+    background: white !important;
+    color: black !important;
+  }
+  .print-break-inside-avoid {
+    break-inside: avoid;
+  }
+  .print-break-before-page {
+    break-before: page;
+  }
+}

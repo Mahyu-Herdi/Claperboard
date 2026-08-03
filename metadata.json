@@ -1,0 +1,6 @@
+{
+  "name": "Slate Pre-Production",
+  "description": "An offline PWA for filmmakers to manage script breakdowns, shot lists, and call sheets.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
