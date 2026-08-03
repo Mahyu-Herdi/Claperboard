@@ -23,7 +23,7 @@ function StoryboardFrame({ buffer }: { buffer: ArrayBuffer }) {
   }, [buffer]);
 
   if (!url) return null;
-  return <img src={url} alt="Storyboard Frame" className="w-full h-full object-cover rounded-xl" referrerPolicy="no-referrer" />;
+  return <img src={url} alt="Storyboard Frame" className="w-full h-full object-contain bg-zinc-950 dark:bg-black rounded-xl" referrerPolicy="no-referrer" />;
 }
 
 export function ScriptBreakdown({ projectId }: { projectId: number }) {
@@ -507,7 +507,7 @@ export function ScriptBreakdown({ projectId }: { projectId: number }) {
                                   {shot.shotType || 'MCU'} • {shot.cameraAngle || 'Eye Level'}
                                 </span>
                               </div>
-                              <div className="aspect-video bg-gray-100 border border-black overflow-hidden flex items-center justify-center relative mb-3">
+                              <div className={`aspect-video border border-black overflow-hidden flex items-center justify-center relative mb-3 ${shot.imageBlob ? 'bg-zinc-950' : 'bg-gray-100'}`}>
                                 {shot.imageBlob ? (
                                   <StoryboardFrame buffer={shot.imageBlob} />
                                 ) : (
@@ -855,7 +855,7 @@ export function ScriptBreakdown({ projectId }: { projectId: number }) {
                       {/* Storyboard Frame Drawing Box */}
                       <div className="md:col-span-4 flex flex-col justify-start">
                         <span className="text-[10px] font-black uppercase tracking-wider opacity-60 mb-1.5">Gambar / Papan Cerita</span>
-                        <div className="relative aspect-video clay-inset flex items-center justify-center overflow-hidden bg-black/5 min-h-[140px] rounded-xl border border-black/10">
+                        <div className={`relative aspect-video clay-inset flex items-center justify-center overflow-hidden min-h-[140px] rounded-xl border border-black/10 ${shot.imageBlob ? 'bg-zinc-950 dark:bg-black' : 'bg-black/5'}`}>
                           {shot.imageBlob ? (
                             <>
                               <StoryboardFrame buffer={shot.imageBlob} />

@@ -34,7 +34,7 @@ function TableStoryboardImage({ buffer }: { buffer: ArrayBuffer | null | undefin
     <img 
       src={url} 
       alt="Storyboard Panel" 
-      className="w-full aspect-video object-cover rounded border border-zinc-300 shadow-sm" 
+      className="w-full aspect-video object-contain bg-zinc-950 dark:bg-black rounded border border-zinc-300 shadow-sm" 
       referrerPolicy="no-referrer"
     />
   );
@@ -121,7 +121,7 @@ export function Storyboard({ projectId }: { projectId: number }) {
   const renderImage = (buffer: ArrayBuffer) => {
     const blob = new Blob([buffer]);
     const url = URL.createObjectURL(blob);
-    return <img src={url} alt="Storyboard Frame" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />;
+    return <img src={url} alt="Storyboard Frame" className="w-full h-full object-contain bg-zinc-950 dark:bg-black transition-transform duration-500 hover:scale-105" />;
   };
 
   if (!project || !scenes || !shots) return <ClapperLoader />;
@@ -362,12 +362,12 @@ export function Storyboard({ projectId }: { projectId: number }) {
                             </div>
 
                             {/* Shot Frame */}
-                            <div className="aspect-video bg-zinc-200 rounded overflow-hidden flex items-center justify-center border border-zinc-300 relative">
+                            <div className="aspect-video bg-zinc-950 rounded overflow-hidden flex items-center justify-center border border-zinc-300 relative">
                               {frameUrl ? (
                                 <img 
                                   src={frameUrl} 
                                   alt="Storyboard Frame" 
-                                  className="w-full h-full object-cover" 
+                                  className="w-full h-full object-contain" 
                                 />
                               ) : (
                                 <div className="text-center text-zinc-400 font-mono text-[9px] uppercase tracking-widest p-2">
@@ -659,7 +659,7 @@ export function Storyboard({ projectId }: { projectId: number }) {
                         className="clay-card flex flex-col h-full print-break-inside-avoid shadow-md hover:shadow-lg transition-all duration-300"
                       >
                         {/* Image Container */}
-                        <div className="relative aspect-video bg-[#e5e5e5] rounded-t-xl flex items-center justify-center overflow-hidden border-b border-black/10">
+                        <div className={`relative aspect-video rounded-t-xl flex items-center justify-center overflow-hidden border-b border-black/10 ${shot.imageBlob ? 'bg-zinc-950 dark:bg-black' : 'bg-[#e5e5e5]'}`}>
                           {shot.imageBlob ? (
                             <>
                               {renderImage(shot.imageBlob)}
