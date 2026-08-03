@@ -4,8 +4,8 @@
   "description": "Aplikasi asisten sutradara dan kru untuk mengelola konsep cerita, skenario, storyboard, dan call sheet offline.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#E0E0E0",
-  "theme_color": "#E0E0E0",
+  "background_color": "#09090b",
+  "theme_color": "#09090b",
   "orientation": "portrait",
   "icons": [
     {
