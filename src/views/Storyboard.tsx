@@ -556,33 +556,34 @@ export function Storyboard({ projectId }: { projectId: number }) {
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-4 items-center w-full md:w-auto justify-end">
-          <label className="flex items-center gap-2 cursor-pointer font-bold text-xs uppercase text-black/70">
-            <input 
-              type="checkbox" 
-              checked={showScriptBlock} 
-              onChange={(e) => setShowScriptBlock(e.target.checked)}
-              className="rounded border-gray-300 text-amber-500 focus:ring-amber-500 w-4 h-4"
-            />
-            Naskah Adegan
-          </label>
-
-          <label className="flex items-center gap-2 cursor-pointer font-bold text-xs uppercase text-black/70">
-            <input 
-              type="checkbox" 
-              checked={printScenePageBreak} 
-              onChange={(e) => setPrintScenePageBreak(e.target.checked)}
-              className="rounded border-gray-300 text-amber-500 focus:ring-amber-500 w-4 h-4"
-            />
-            Cetak Break Per Adegan
-          </label>
-
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full md:w-auto justify-end">
+          <div className="flex items-center justify-between sm:justify-start gap-4 p-3 sm:p-0 bg-black/5 sm:bg-transparent rounded-xl sm:rounded-none">
+            <label className="flex items-center gap-2 cursor-pointer font-bold text-[10px] sm:text-xs uppercase text-black/70 flex-1 sm:flex-none justify-center sm:justify-start leading-tight">
+              <input 
+                type="checkbox" 
+                checked={showScriptBlock} 
+                onChange={(e) => setShowScriptBlock(e.target.checked)}
+                className="rounded border-gray-300 text-amber-500 focus:ring-amber-500 w-4 h-4 shrink-0"
+              />
+              <span className="truncate">Naskah Adegan</span>
+            </label>
+            <div className="w-px h-6 bg-black/10 sm:hidden"></div>
+            <label className="flex items-center gap-2 cursor-pointer font-bold text-[10px] sm:text-xs uppercase text-black/70 flex-1 sm:flex-none justify-center sm:justify-start leading-tight">
+              <input 
+                type="checkbox" 
+                checked={printScenePageBreak} 
+                onChange={(e) => setPrintScenePageBreak(e.target.checked)}
+                className="rounded border-gray-300 text-amber-500 focus:ring-amber-500 w-4 h-4 shrink-0"
+              />
+              <span className="truncate">Cetak Break</span>
+            </label>
+          </div>
           <button
             onClick={() => setIsPrintPreview(true)}
-            className="clay-btn bg-amber-500 hover:bg-amber-600 text-black px-4 py-2 text-xs font-black uppercase tracking-wider flex items-center gap-2 shadow-[2px_2px_10px_rgba(245,158,11,0.2)] hover:scale-105 transition-all ml-2"
+            className="clay-btn !bg-amber-500 hover:!bg-amber-600 !text-black px-4 py-3 sm:py-2 text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2 shadow-[2px_2px_10px_rgba(245,158,11,0.2)] hover:scale-105 transition-all w-full sm:w-auto"
           >
-            <Printer className="w-4 h-4" />
-            Pratinjau Cetak (A4)
+            <Printer className="w-4 h-4 shrink-0 text-black" />
+            <span className="truncate">Pratinjau Cetak (A4)</span>
           </button>
         </div>
       </div>

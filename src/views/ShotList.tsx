@@ -220,7 +220,7 @@ export function ShotList({ projectId }: { projectId: number }) {
         
         <button
           onClick={() => setIsPrintPreview(true)}
-          className="clay-btn-dark px-4 py-2.5 text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2 hover:scale-105 active:scale-95 transition-all cursor-pointer"
+          className="clay-btn-dark w-full md:w-auto px-4 py-3 md:py-2.5 text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2 hover:scale-105 active:scale-95 transition-all cursor-pointer"
         >
           <Printer className="w-4 h-4 stroke-[2.5px]" />
           <span>Pratinjau Cetak (A4)</span>

@@ -100,7 +100,15 @@ export function StoryConcept({ projectId, onNavigate }: Props) {
   };
 
   return (
-    <div className="flex flex-col gap-6 w-full max-w-full pb-16">
+    <div className="flex flex-col gap-6 w-full max-w-full pb-16 relative">
+      {/* Indicator Simpan Otomatis (Hanya Titik Hijau Berkedip di Pojok Kanan Atas Layar) */}
+      {saveSuccess && (
+        <div 
+          className="fixed top-4 right-4 z-[9999] w-3 h-3 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_12px_rgba(16,185,129,0.8)] border-2 border-white dark:border-zinc-900"
+          title="Tersimpan otomatis"
+        />
+      )}
+
       {/* Clapper Header */}
       <ClapperHeader
         project={project}
@@ -164,11 +172,6 @@ export function StoryConcept({ projectId, onNavigate }: Props) {
                   <h2 className="text-lg font-black tracking-tight uppercase">Tentukan Premis & Pesan (Core Storytelling)</h2>
                 </div>
               </div>
-              {saveSuccess && (
-                <span className="text-xs font-bold text-emerald-600 flex items-center gap-1.5 animate-pulse">
-                  <Check className="w-4 h-4 stroke-[3]" /> Tersimpan otomatis
-                </span>
-              )}
             </div>
 
             <p className="text-xs font-bold text-zinc-600 -mt-2">
@@ -333,35 +336,34 @@ export function StoryConcept({ projectId, onNavigate }: Props) {
       </div>
 
       {/* Action Footer: Transition to Step 3 (Skenario / Script Breakdown) */}
-      <div className="clay-card p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="clay-card p-4 sm:p-5 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
         <button
           type="button"
           onClick={() => onNavigate('metadata')}
-          className="clay-btn px-4 py-3 font-bold text-xs uppercase flex items-center gap-2 cursor-pointer"
+          className="clay-btn px-4 py-3 font-bold text-xs uppercase flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto"
         >
           <ArrowLeft className="w-4 h-4 text-black dark:text-white" />
           Pengaturan Proyek
         </button>
 
-        <div className="flex flex-wrap items-center justify-end gap-3 w-full sm:w-auto">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-end gap-3 w-full sm:w-auto">
           <button
             type="button"
             onClick={handleGenerateDraftScenes}
             disabled={isGenerating}
-            className="clay-btn px-4 py-3 font-extrabold text-xs uppercase flex items-center gap-2 bg-amber-400 hover:bg-amber-500 text-black cursor-pointer transition-all"
+            className="clay-btn px-4 py-3 font-extrabold text-xs uppercase flex items-center justify-center gap-2 !bg-amber-500 hover:!bg-amber-600 !text-black cursor-pointer transition-all w-full sm:w-auto text-center"
             title="Konversi outline awal, tengah, akhir menjadi 3 draf adegan di Skenario"
           >
-            <Sparkles className="w-4 h-4 stroke-[2.5]" />
-            Buat Adegan dari Outline (Tahap 3)
+            <Sparkles className="w-4 h-4 stroke-[2.5] shrink-0 text-black" />
+            <span className="truncate">Buat Adegan dari Outline (Tahap 3)</span>
           </button>
-
           <button
             type="button"
             onClick={() => onNavigate('script')}
-            className="clay-btn-dark px-6 py-3 font-extrabold text-xs uppercase flex items-center gap-2 cursor-pointer shadow-lg hover:scale-[1.02] active:scale-98 transition-all"
+            className="clay-btn-dark px-6 py-3 font-extrabold text-xs uppercase flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:scale-[1.02] active:scale-98 transition-all w-full sm:w-auto text-center"
           >
-            Lanjut ke Tahap 3: Tulis Skenario
-            <ArrowRight className="w-4 h-4" />
+            <span className="truncate">Lanjut ke Tahap 3: Tulis Skenario</span>
+            <ArrowRight className="w-4 h-4 shrink-0" />
           </button>
         </div>
       </div>
